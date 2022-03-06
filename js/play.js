@@ -19,10 +19,10 @@ play_btn.onclick = function () {
   let rand = randomizerBot();
   let p = document.createElement("p");
   let result = document.querySelector(".outputGround");
+  let digital = document.querySelector(".input_value");
   let count_byk = 0;
   let count_cow = 0;
-  let mass = document
-    .querySelector(".input_value")
+  let mass = digital
     .value.toString()
     .split("")
     .filter((value) => value !== " ")
@@ -47,5 +47,12 @@ play_btn.onclick = function () {
       ""
     )} - ${count_cow} Коров и ${count_byk} Быков`;
     result.append(p);
+  }
+  if(count_byk == 4){
+      alert('Поздравляю с победой')
+      p.innerHTML = ''
+      digital.value = ''
+      location.reload()
+
   }
 };
