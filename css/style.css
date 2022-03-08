@@ -85,7 +85,12 @@ h6 {
 } */
 
 .outputGround {
-  font-size: 20px;
-  height: 250px;
-  overflow: scroll;
+ display: flex;
+ flex-direction: column;
+}
+.output_step{
+    font-size: 20px;
+    height: 250px;
+    overflow: scroll;
+    padding-left: 7%;
 }
