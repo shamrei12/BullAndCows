@@ -1,24 +1,24 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Lobster', cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Lobster", cursive;
 }
 html {
-    background: url(../img/BG.png) no-repeat;
-    background-size: 80%;
-    background-position: top center;
-    background-attachment: fixed; 
-    overflow: hidden;
+  background: url(../img/BG.png) no-repeat;
+  background-size: 80%;
+  background-position: top center;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
 .container {
-    margin: 0px auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    place-content: center space-between;
-    justify-content: space-around;
+  margin: 0px auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  place-content: center space-between;
+  justify-content: space-around;
 }
 
 h1,
@@ -27,39 +27,54 @@ h3,
 h4,
 h5,
 h6 {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 35px;
+  text-align: center;
+  margin: 10px 0;
+  font-size: 35px;
 }
 
 .playground {
-    padding: 5% 0;
-    margin: 5% 0 0;
-    display: grid;
-    flex-direction: column;
-    width: 60%;
-    justify-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
+  padding: 5% 0;
+  margin: 5% 0 0;
+  /* display: flex;
+    justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .inputGround {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  align-items: center;
 }
-.inputGround input{
-    width: 100%;
-    height: 40px;
-    padding: 0 5px 0;
-    font-size: 20px;
+.inputGround input {
+  width: 100%;
+  height: 40px;
+  padding: 0 5px 0;
+  font-size: 20px;
 }
-.inputGround .btn{
-    font-size: 20px;
-    width: 200px;
-    margin: 5px;
-    height: 50px;
-    border: 1px solid #000;
-    transition: .4s;
+.inputGround .number_place {
+  margin: 30px 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+.number_place .number_value {
+  width: 100%;
+  height: 35px;
+  font-size:20px;
+}
+.inputGround .btn {
+  font-size: 20px;
+  width: 200px;
+  margin: 5px;
+  height: 50px;
+  border: 1px solid #000;
+  transition: 0.4s;
 }
 /* .inputGround .btn:hover{
     width: 120px;
@@ -69,8 +84,8 @@ h6 {
     color: #fff;
 } */
 
-.outputGround{
-    font-size: 25px;
-    height: 250px;
-    overflow: scroll;
+.outputGround {
+  font-size: 20px;
+  height: 250px;
+  overflow: scroll;
 }

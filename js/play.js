@@ -2,7 +2,7 @@ let play_btn = document.querySelector(".btn");
 let result = new Set();
 
 function randomizerBot() {
-  var rand = [];
+  let rand = [];
   let random = 0;
   while (result.size < 4) {
     random = Math.floor(Math.random() * 9);
@@ -16,6 +16,7 @@ function randomizerBot() {
 }
 
 play_btn.onclick = function () {
+  let repeat = new Set();
   let rand = randomizerBot();
   let p = document.createElement("p");
   let result = document.querySelector(".outputGround");
@@ -27,9 +28,13 @@ play_btn.onclick = function () {
     .split("")
     .filter((value) => value !== " ")
     .map((value) => +value);
+    for(key of mass){
+      repeat.add(key)
+    }
   //проверка на количество цифр в массиве
-  if (mass.length > 4 || mass == NaN) {
+  if (mass.length > 4 || mass == NaN || repeat.size < 4) {
     alert("Введите корректные данные");
+    digital.value = '';
   } else {
     //сравнение чисел в массиве
     for (let i = 0; i < rand.length; i++) {
