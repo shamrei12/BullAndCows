@@ -46,10 +46,10 @@ play_btn.onclick = function () {
     result.append(p);
 
   if(count_byk == 4){
-      alert('Поздравляю с победой')
       p.innerHTML = ''
       digital.value = ''
-      location.reload()
+      menuEnd()
+
 
   }
 };
@@ -62,5 +62,13 @@ function checkInputcorect (mass){
     alert("Введите корректные данные");
     digital.value = ''; 
 }
+}
+function menuEnd (){
+  let menu = document.querySelector(".menuNone");
+  menu.classList.remove("menuNone")
+  menu.classList.add('menu')
+  let btn = document.querySelector('.newGame').addEventListener("click", function (event) {
+    location.reload()
+  });
 }
 
