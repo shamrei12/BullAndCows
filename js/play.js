@@ -11,7 +11,7 @@ function randomizerBot() {
   for (item of result) {
     rand.push(item);
   }
-
+  console.log(rand);
   return rand;
 }
 

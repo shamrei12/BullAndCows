@@ -75,13 +75,6 @@ h6 {
   border: 1px solid #000;
   transition: 0.4s;
 }
-/* .inputGround .btn:hover{
-    width: 120px;
-    height: 40px;
-    background-color: #000;
-    border: 1px solid #fff;
-    color: #fff;
-} */
 
 .outputGround {
  display: flex;
