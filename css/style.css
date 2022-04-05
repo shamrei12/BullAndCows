@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   font-family: "Lobster", cursive;
+  font-size: 150%;
 }
 html {
   background: url(../img/BG.png) no-repeat;
@@ -33,10 +34,8 @@ h6 {
 }
 
 .playground {
-  padding: 5% 0;
+  padding: 5% 5%;
   margin: 5% 0 0;
-  /* display: flex;
-    justify-content: space-around; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 60%;

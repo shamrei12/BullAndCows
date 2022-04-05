@@ -11,12 +11,11 @@ function randomizerBot() {
   for (item of result) {
     rand.push(item);
   }
-  console.log(rand);
+
   return rand;
 }
 
 play_btn.onclick = function () {
-  let repeat = new Set();
   let rand = randomizerBot();
   let p = document.createElement("p");
   let result = document.querySelector(".output_step");
@@ -28,14 +27,7 @@ play_btn.onclick = function () {
     .split("")
     .filter((value) => value !== " ")
     .map((value) => +value);
-    for(key of mass){
-      repeat.add(key)
-    }
-  //проверка на количество цифр в массиве
-  if (mass.length > 4 || mass == NaN || repeat.size < 4) {
-    alert("Введите корректные данные");
-    digital.value = '';
-  } else {
+    checkInputcorect(mass)
     //сравнение чисел в массиве
     for (let i = 0; i < rand.length; i++) {
       for (let j = 0; j < mass.length; j++) {
@@ -52,7 +44,7 @@ play_btn.onclick = function () {
       ""
     )} - ${count_cow} Коров и ${count_byk} Быков`;
     result.append(p);
-  }
+
   if(count_byk == 4){
       alert('Поздравляю с победой')
       p.innerHTML = ''
@@ -61,3 +53,14 @@ play_btn.onclick = function () {
 
   }
 };
+function checkInputcorect (mass){
+  let repeat = new Set(); //создание set для проверки вводимых данных на уникальность вводимых данных
+  for(key of mass){
+    repeat.add(key)
+  }
+  if (mass.length > 4 || mass == NaN || repeat.size < 4) { //проверка условий: размер, является ли числом и проверка повторений
+    alert("Введите корректные данные");
+    digital.value = ''; 
+}
+}
+
