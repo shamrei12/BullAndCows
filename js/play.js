@@ -27,10 +27,9 @@ play_btn.onclick = function () {
     .split("")
     .filter((value) => value !== " ")
     .map((value) => +value);
-  checkInputcorect(mass);
 
   //сравнение чисел в массиве
-  if (checkInputcorect != false) {
+  if (checkInputcorect(mass, digital)!= false) {
     for (let i = 0; i < rand.length; i++) {
       for (let j = 0; j < mass.length; j++) {
         if (rand[i] == mass[j] && i == j) {
@@ -42,25 +41,22 @@ play_btn.onclick = function () {
     }
     //добавление результатов в колнку с результатом
     if(mass.length != 0){
-    p.className = "step";
-    p.innerHTML = `Ваш ход: ${mass.join(
-      ""
-    )} - ${count_cow} Коров и ${count_byk} Быков`;
-    result.append(p);
-    digital.value = "";
+      p.className = "step";
+      p.innerHTML = `Ваш ход: ${mass.join(
+        ""
+      )} - ${count_cow} Коров и ${count_byk} Быков`;
+      result.append(p);
+      digital.value = "";
 
-    if (count_byk == 4) {
-      p.innerHTML = "";
-      digital.value = "";
-      menuEnd();
+      if (count_byk == 4) {
+        p.innerHTML = "";
+        digital.value = "";
+        menuEnd();
+      }
     }
-    else{
-      digital.value = "";
-    }
-  }
   }
 };
-function checkInputcorect(mass, digital) {
+function checkInputcorect(mass,digital) {
   let repeat = new Set(); //создание set для проверки вводимых данных на уникальность вводимых данных
   for (key of mass) {
     repeat.add(key);
@@ -68,8 +64,8 @@ function checkInputcorect(mass, digital) {
   if (mass.length > 4 || mass == NaN || repeat.size < 4) {
     //проверка условий: размер, является ли числом и проверка повторений
     alert("Введите корректные данные");
-    mass.length = 0
-
+    digital.value = "";
+    return false;
   }
 }
 function menuEnd() {
