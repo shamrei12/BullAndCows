@@ -97,10 +97,10 @@ h6 {
   width: 100vw;
   position: absolute;
   background-color: #fff;
-  backdrop-filter: blur(5px);
 }
 .menu button {
-  width: 30%;
-  height: 20%;
-  font-size: 30px
+  word-wrap: break-word;
+  width: 50%;
+  height: 40%;
+  font-size: 30px;
 }
