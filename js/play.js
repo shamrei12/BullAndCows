@@ -28,28 +28,36 @@ play_btn.onclick = function () {
     .filter((value) => value !== " ")
     .map((value) => +value);
   checkInputcorect(mass);
+
   //сравнение чисел в массиве
-  for (let i = 0; i < rand.length; i++) {
-    for (let j = 0; j < mass.length; j++) {
-      if (rand[i] == mass[j] && i == j) {
-        count_byk++;
-      } else if (i !== j && rand[i] == mass[j]) {
-        count_cow++;
+  if (checkInputcorect != false) {
+    for (let i = 0; i < rand.length; i++) {
+      for (let j = 0; j < mass.length; j++) {
+        if (rand[i] == mass[j] && i == j) {
+          count_byk++;
+        } else if (i !== j && rand[i] == mass[j]) {
+          count_cow++;
+        }
       }
     }
-  }
-  //добавление результатов в колнку с результатом
-  p.className = "step";
-  p.innerHTML = `Ваш ход: ${mass.join(
-    ""
-  )} - ${count_cow} Коров и ${count_byk} Быков`;
-  result.append(p);
-  digital.value = "";
-
-  if (count_byk == 4) {
-    p.innerHTML = "";
+    //добавление результатов в колнку с результатом
+    if(mass.length != 0){
+    p.className = "step";
+    p.innerHTML = `Ваш ход: ${mass.join(
+      ""
+    )} - ${count_cow} Коров и ${count_byk} Быков`;
+    result.append(p);
     digital.value = "";
-    menuEnd();
+
+    if (count_byk == 4) {
+      p.innerHTML = "";
+      digital.value = "";
+      menuEnd();
+    }
+    else{
+      digital.value = "";
+    }
+  }
   }
 };
 function checkInputcorect(mass, digital) {
@@ -60,6 +68,8 @@ function checkInputcorect(mass, digital) {
   if (mass.length > 4 || mass == NaN || repeat.size < 4) {
     //проверка условий: размер, является ли числом и проверка повторений
     alert("Введите корректные данные");
+    mass.length = 0
+
   }
 }
 function menuEnd() {
