@@ -46,4 +46,7 @@ function handleNumber(value){
 
 function rerenderScreen() {
   input_value.value = buffer;
+  if(buffer.length > 3){
+      buffer = ''
+  }
 }
