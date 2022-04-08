@@ -36,7 +36,7 @@ function handleSymbol(value){
 }
 
 function handleNumber(value){
-    if(buffer == "0"){
+    if(buffer == ""){
         buffer = value;
     }else{
         buffer += value;
