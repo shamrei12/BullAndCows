@@ -7,9 +7,12 @@
 }
 
 html {
-  background: url(../img/BG.png) no-repeat;
-  background-size: 80%;
-  background-position: top center;
+  background: url(../img/BG_ONE.jpg) no-repeat;
+  background-size: 115%;
+  -moz-background-size: 100%; /* Firefox 3.6+ */
+  -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+  -o-background-size: 100%; /* Opera 9.6+ */
+  background-position: center;
   background-attachment: fixed;
   overflow: hidden;
 }
@@ -30,7 +33,7 @@ h4,
 h5,
 h6 {
   text-align: center;
-  margin: 10px 0;
+  /* margin: 10px 0; */
   font-size: 35px;
 }
 .resultUser{
