@@ -11,6 +11,7 @@ function randomizerBot() {
     for (item of result) {
         rand.push(item);
     }
+    console.log(rand);
     return rand;
 }
 
@@ -51,7 +52,7 @@ play_btn.onclick = function() {
             if (count_byk == 4) {
                 p.innerHTML = "";
                 digital.value = "";
-                menuEnd();
+                menuEnd(step);
             }
         }
     }
@@ -71,9 +72,21 @@ function checkInputcorect(mass, digital) {
 }
 
 function menuEnd() {
+    let step = document.querySelectorAll('.step').length
     let menu = document.querySelector(".menuNone");
+    let resultUser = document.querySelector('.resultUser');
     menu.classList.remove("menuNone");
     menu.classList.add("menu");
+    if(step < 2){
+        resultUser.innerHTML = `Ваш рекорд составил ${step} ход`
+    }
+    else if(step >= 2 && step < 5){
+        resultUser.innerHTML = `Ваш рекорд составил ${step} хода`
+    }
+    else{
+        resultUser.innerHTML = `Ваш рекорд составил ${step} ходов`
+    }
+    
     let btn = document
         .querySelector(".newGame")
         .addEventListener("click", function(event) {

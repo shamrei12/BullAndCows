@@ -33,6 +33,10 @@ h6 {
   margin: 10px 0;
   font-size: 35px;
 }
+.resultUser{
+  font-size: 25px;
+  padding-bottom: 20px;
+}
 
 .playground {
   padding: 5% 5%;
